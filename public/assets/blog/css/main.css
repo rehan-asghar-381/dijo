@@ -1,0 +1,42 @@
+.post {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  min-height: 20rem; }
+  .post .img {
+    flex: 0 0 30%; }
+    .post .img img {
+      width: 100%; }
+  .post .content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column; }
+    .post .content h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      font-size: 1.6rem; }
+    .post .content p {
+      color: #000; }
+    .post .content .date {
+      color: #000; }
+
+.recipie-collections {
+  padding: 0;
+  margin: 0; }
+  .recipie-collections li {
+    border-top: 1px solid #e9e9e9; }
+    .recipie-collections li a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px; }
+      .recipie-collections li a .count {
+        font-weight: bold;
+        color: #888; }

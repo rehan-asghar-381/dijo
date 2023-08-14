@@ -52,6 +52,8 @@ Route::get('otp-resent', 'LoginController@otp_resent')->name('otp_resent');
 Route::get('lang/{locale}', 'HomeController@lang')->name('lang');
 Route::get('terms-and-conditions', 'HomeController@terms_and_conditions')->name('terms-and-conditions');
 Route::get('about-us', 'HomeController@about_us')->name('about-us');
+Route::get('blogs', 'BlogController@blogs')->name('blogs');
+Route::get('blog/{slug}', 'BlogController@post_detail')->name('blog-detail');
 Route::match(['get', 'post'],'contact-us', 'HomeController@contact_us')->name('contact-us');
 Route::get('privacy-policy', 'HomeController@privacy_policy')->name('privacy-policy');
 Route::post('newsletter/subscribe', 'NewsletterController@newsLetterSubscribe')->name('newsletter.subscribe');

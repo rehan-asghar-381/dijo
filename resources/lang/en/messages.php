@@ -2964,6 +2964,7 @@ the merchant web panel/ app won t get the access for managing items.
   'The increased delivery fee field is required when increased delivery fee status is 1.' => 'The increased delivery fee field is required when increased delivery fee status is 1.',
   'increased_delivery_fee_is_required' => 'Increased delivery fee is required',
   'Shift_setup' => 'Shift setup',
+  'blog_setup' => 'Blog setup',
   'Shift' => 'Shift',
   'by' => 'by',
   'Add_New_Shift' => 'Add New Shift',
@@ -3527,6 +3528,7 @@ the merchant web panel/ app won t get the access for managing items.
   'hours' => 'Hours',
   'done' => 'Done',
   'Admin Landing Page' => 'Admin Landing Page',
+  'Blogs' => 'Blogs',
   'Header' => 'Header',
   'Features' => 'Features',
   'Services' => 'Services',
@@ -4644,4 +4646,5 @@ the merchant web panel/ app won t get the access for managing items.
   'Scheduled_Delivery' => 'Scheduled Delivery',
   'default_restaurant_name_is_required' => 'Default merchant name is required',
   'default_restaurant_address_is_required' => 'Default merchant address is required',
+  'The post slug field is required.' => 'The post slug field is required.',
 );

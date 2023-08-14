@@ -1207,6 +1207,18 @@
 
                             </ul>
                         </li>
+                        <li
+                            class="navbar-vertical-aside-has-menu {{ Request::is('admin/blog*') ? 'active' : '' }}">
+                            <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                href="{{ route('admin.blog.list') }}"
+                                title="{{ translate('messages.blog_setup') }}">
+                                <i class="tio-calendar nav-icon"></i>
+                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                    {{ translate('messages.blog_setup') }}
+                                </span>
+                            </a>
+                        </li>
+                        
                         <li class="nav-item">
                             <small class="nav-subtitle"
                                 title="{{ translate('messages.system') }} {{ translate('messages.settings') }}">{{ translate('messages.system') }} {{ translate('messages.settings') }}</small>

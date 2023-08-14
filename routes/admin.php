@@ -738,6 +738,14 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
             Route::post('login-page-setup/update', 'BusinessSettingsController@login_url_page_update')->name('login_url_page_update');
         });
 
+        Route::group(['prefix' => 'blogs', 'as' => 'blog.'], function () {
+            Route::get('create', 'BlogController@create')->name('create');
+            Route::get('/', 'BlogController@list')->name('list');
+            Route::post('store', 'BlogController@store')->name('store');
+            Route::get('edit/{id}', 'BlogController@edit')->name('edit');
+            Route::post('update/{id}', 'BlogController@update')->name('update');
+        });
+
     Route::get('refund/{status}', 'OrderController@list')->name('refund.refund_attr')->middleware('module:order');
     Route::post('remove_image', 'BusinessSettingsController@remove_image')->name('remove_image');
 });
