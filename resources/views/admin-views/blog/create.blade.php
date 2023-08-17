@@ -40,13 +40,13 @@
                                 <label class="form-label">Post Title
                                     <span class="input-label-secondary text--title"  data-toggle="tooltip" data-placement="right" data-original-title=""></span>
                                 </label>
-                                <input type="text"  maxlength="50"  name="post_title" value="" class="form-control post_title" placeholder="Enter Title">
+                                <input type="text"  maxlength="200"  name="post_title" value="" class="form-control post_title" placeholder="Enter Title">
                             </div>
                             <div class="col-sm-6">
                                 <label class="form-label">Post Slug
                                     <span class="input-label-secondary text--title" data-toggle="tooltip" data-placement="right" data-original-title=""></span>
                                 </label>
-                                <input type="text" maxlength="40"  name="post_slug" value="" class="form-control post_slug" placeholder="" readonly>
+                                <input type="text" maxlength="200"  name="post_slug" value="" class="form-control post_slug" placeholder="" readonly>
                             </div>
                         </div>
                         <div class="row g-4" >
@@ -64,7 +64,7 @@
                                 <label class="form-label">Meta Title
                                     <span class="input-label-secondary text--title"  data-toggle="tooltip" data-placement="right" data-original-title=""></span>
                                 </label>
-                                <input type="text"  maxlength="50"  name="meta_title" value="" class="form-control" placeholder="Enter Title">
+                                <input type="text"  maxlength="200"  name="meta_title" value="" class="form-control" placeholder="Enter Title">
                             </div>
                         </div>
                         <div class="row g-4" >
@@ -72,7 +72,7 @@
                                 <label class="form-label">Meta Tags
                                     <span class="input-label-secondary text--title"  data-toggle="tooltip" data-placement="right" data-original-title=""></span>
                                 </label>
-                                <input type="text"  maxlength="50"  name="meta_tags" value="" class="form-control" placeholder="Enter Title">
+                                <input type="text"  maxlength="200"  name="meta_tags" value="" class="form-control" placeholder="Enter Title">
                             </div>
                             <div class="col-sm-6">
                                 <label class="form-label">Meta Description
