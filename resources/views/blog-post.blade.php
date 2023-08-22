@@ -22,10 +22,6 @@
     <!-- Page Header Gap -->
     <section class="py-5">
         <div class="container">
-          
-            @php
-                // dd($blog);
-            @endphp
             <div class="row">
                 <div class="col-md-8 mb-5 mb-md-0">
                     <h2 class="title mb-3">{{ $blog->post_title }}</h2>
@@ -42,10 +38,33 @@
                     </div>
                     @if($blog->type == "Recipe")
                         <div class="mb-5">
+                            <h4 class="title mb-3">Recipe Ingredients</h4>
                             <div class="content" style="padding: 0px !important;margin: 40px 0px;">
-                                <div class="date mb-1">Post Date - <small>{{ date("d M Y", $blog->time_id) }}</small></div>
                                 <div class="post-content">
-                                    {!! $blog->recipe_incrediants !!}
+                                    @if (count($blog->RecipeIngredient) > 0)
+                                    <table class="table table-hover">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col" style="font-size: 16px;">Ingredient</th>
+                                            <th scope="col" style="font-size: 16px;">Quantity</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($blog->RecipeIngredient as $Ingredient)
+                                            
+                                                <tr>
+                                                    <td>{{$Ingredient->ingredient}}</td>
+                                                    <td>{{$Ingredient->quantity}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                        
+                                            
+                                        
+                                        
+                                    @endif
+                                    
                                 </div>
                             </div>
                         </div>

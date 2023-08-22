@@ -12,6 +12,9 @@
         .d-none{
             display: none;
         }
+        .--f-left{
+            float: left;
+        }
     </style>
     <div class="content container-fluid">
         <!-- Page Header -->
@@ -93,13 +96,29 @@
                         </div>
                         <div class="row g-4 recipe-ingrediant d-none">
                             <div class="col-sm-12">
-                                <label class="form-label">Recipe Ingrediants
+                                <label class="form-label">Recipe Ingredients
                                     <span class="input-label-secondary text--title" data-toggle="tooltip" data-placement="right" data-original-title=""></span>
                                 </label>
-                                <div class="form-group lang_form" id="default-form">
-                                    <textarea class="ckeditor form-control ingrediant" name="recipe_incrediants"></textarea>
+                            </div>
+                            <div class="col-sm-12 ingrdiant">
+                                <div class="col-sm-4 --f-left">
+                                    <div class="form-group lang_form" id="default-form">
+                                        <input class="form-control" name="ingrediant_name[]" type="text" value="" placeholder="Type Ingrediant">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 --f-left">
+                                    <div class="form-group lang_form" id="default-form">
+                                        <input class="form-control" name="ingrediant_qty[]" type="text" placeholder="Type Quantity" value="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 --f-left">
+                                    <button class="btn btn-sm btn--primary --add">Add</button>
+                                </div>
+                                <div class="col-sm-1 --f-left">
+                                    <button class="btn btn-sm btn--reset --remove">Remove</button>
                                 </div>
                             </div>
+                            
                         </div>
                         <div>
                             <label class="form-label d-block mb-2">
@@ -112,12 +131,11 @@
                                             </div>
                                         <input type="file" name="post_image" hidden="">
                                     </label>
-
-                                        @if (isset($image_content['header_content_image'] ))
-                                        <span id="header_content_image" class="remove_image_button"
-                                            onclick="toogleStatusModal(event,'header_content_image','mail-success','mail-warninh','{{translate('Important!')}}','{{translate('Warning!')}}',`<p>{{translate('Are_you_sure_you_want_to_remove_this_image')}}</p>`,`<p>{{translate('Are_you_sure_you_want_to_remove_this_image.')}}</p>`)"
-                                            > <i class="tio-clear"></i></span>
-                                        @endif
+                                    @if (isset($image_content['header_content_image'] ))
+                                    <span id="header_content_image" class="remove_image_button"
+                                        onclick="toogleStatusModal(event,'header_content_image','mail-success','mail-warninh','{{translate('Important!')}}','{{translate('Warning!')}}',`<p>{{translate('Are_you_sure_you_want_to_remove_this_image')}}</p>`,`<p>{{translate('Are_you_sure_you_want_to_remove_this_image.')}}</p>`)"
+                                        > <i class="tio-clear"></i></span>
+                                    @endif
                                 </div>
                         </div>
                     </div>
@@ -157,6 +175,23 @@
                             .replace(/ /g, "-")
                             .replace(/[^\w-]+/g, "");
         $('.post_slug').val(slug);
+    });
+    $(document).on('click', '.--add', function(event) {
+        var parent_selector                 = '.recipe-ingrediant';
+        var print_location_template         = $(this).closest(parent_selector).find(".ingrdiant").first().clone();
+        var print_location_parent           = $(this).closest(parent_selector);
+        var new_print_location_template     = print_location_template.clone();
+        event.preventDefault();
+        print_location_parent.append(new_print_location_template);
+        new_print_location_template.find('input').val(null);
+    });
+    $(document).on('click', '.--remove', function(e) {
+        let count                           = $('.recipe-ingrediant').find('.ingrdiant').length;
+        console.log(count);
+        e.preventDefault();
+        if(count > 1){
+            $(this).closest('.ingrdiant').remove();
+        }
     });
 </script>
 

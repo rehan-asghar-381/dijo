@@ -19,13 +19,15 @@
     <section class="py-5">
         <div class="container">
           
-          
+            @php
+                // dd('test');
+            @endphp
             <div class="row">
                 <div class="col-md-8 mb-5 mb-md-0">
                     <h4 class="subtitle mb-5">THE LATEST & GREATEST </h4>
                     @if(count($stories) > 0)
                         @foreach ($stories as $story)
-                        <div class="post mb-5">
+                        <div class="post">
                             <div class="img">
                                 <a href="{{ route('blog-detail', $story->slug."-".$story->id)}}">
                                 <img src="{{asset('storage/app/public/admin_feature')}}/{{ $story->image ?? null }}" alt="">
@@ -45,13 +47,8 @@
                         @endforeach
                     @endif
                      
-                 
-                    <div>
-                        <a href="#" class="btn btn-dark btn-lg d-block">
-                            
-                               View More Recent Posts
-                        </a>
-                    </div>   
+                    {{ $stories->links() }}
+                      
                 </div>
                 <div class="col-md-4">
                     <div class="bg-light p-3">
