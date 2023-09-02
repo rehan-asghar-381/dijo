@@ -139,7 +139,9 @@ class HomeController extends Controller
 
     public function terms_and_conditions(Request $request)
     {
+        ini_set('max_input_vars', 10000);
         $data = self::get_settings('terms_and_conditions');
+        // dd($data);
         if ($request->expectsJson()) {
             if($request->hasHeader('X-localization')){
                 $current_language = $request->header('X-localization');
@@ -148,6 +150,7 @@ class HomeController extends Controller
             }
             return response()->json($data);
         }
+        
         return view('terms-and-conditions',compact('data'));
     }
 
@@ -270,7 +273,9 @@ class HomeController extends Controller
     public static function get_settings($name)
     {
         $data = DataSetting::where(['key' => $name])->first()?->value;
-        return $data;
+        // dd(DataSetting::where(['key' => $name])->first());
+        $data = DataSetting::where(['key' => $name])->first()?->value;
+        return stripslashes($data);
     }
 
 

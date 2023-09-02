@@ -22,16 +22,16 @@ class DataSetting extends Model
     }
 
 
-    public function getValueAttribute($value){
-        if (count($this->translations) > 0) {
-            foreach ($this->translations as $translation) {
-                if ($translation['key'] == $this->key) {
-                    return $translation['value'];
-                }
-            }
-        }
-        return $value;
-    }
+    // public function getValueAttribute($value){
+    //     if (count($this->translations) > 0) {
+    //         foreach ($this->translations as $translation) {
+    //             if ($translation['key'] == $this->key) {
+    //                 return $translation['value'];
+    //             }
+    //         }
+    //     }
+    //     return $value;
+    // }
 
     protected static function booted()
     {
